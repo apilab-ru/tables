@@ -1,0 +1,7 @@
+<div class="data">
+  <ng-content></ng-content>
+</div>
+<div class="sort grid-icon"
+     [class.up]="isSortAsc"
+     [class.down]="isSortDesc"
+     *ngIf="isHead"></div>

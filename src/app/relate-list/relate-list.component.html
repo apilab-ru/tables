@@ -1,0 +1,51 @@
+<app-filters class="page__filters"
+             (sendFilter)="onSendFilter($event)"
+             [filterSet]="filterSet">
+</app-filters>
+
+<div class="page__box">
+  <input type="text"
+         [(ngModel)]="searchString"
+         (ngModelChange)="tickUpdateFilter()"
+         placeholder="Поиск по всем полям"
+         class="search-input page__search"/>
+
+  <grid [list]="filteredList" [isShowSpinner]="isShowSpinner">
+    <grid-header>
+      <grid-cell sortFiled="name">Name</grid-cell>
+      <grid-cell sortFiled="description">Description</grid-cell>
+      <grid-cell sortFiled="relateItems"
+                 [sortFunction]="sortByRelate">
+        RelateItems
+      </grid-cell>
+      <grid-cell class="cell-status" sortFiled="status">Status</grid-cell>
+      <grid-cell class="cell-remove">Удаление</grid-cell>
+    </grid-header>
+
+    <grid-row *gridIterator="let item of filteredList">
+      <grid-cell>
+        <span [appMarkFound]="searchString">{{ item.name }}</span>
+      </grid-cell>
+      <grid-cell [title]="item.description">
+        <span [appMarkFound]="searchString">
+          {{ item.description }}
+        </span>
+      </grid-cell>
+      <grid-cell>
+        <div *ngFor="let it of item.relateItems"
+             class="relate__r-item"
+             [appMarkFound]="searchString">
+          {{ it.name }}
+        </div>
+      </grid-cell>
+      <grid-cell class="cell-status">
+      <span class="relate__status"
+            [style.background]="getStatus(item.status).color"
+            [title]="getStatus(item.status).name"></span>
+      </grid-cell>
+      <grid-cell class="cell-remove">
+        <button (click)="delete(item.id)" class="button">X</button>
+      </grid-cell>
+    </grid-row>
+  </grid>
+</div>

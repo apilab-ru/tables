@@ -1,0 +1,25 @@
+@import "theme";
+
+.button {
+  background: $primary;
+  border-radius: 6px;
+  border: none;
+  box-shadow: none;
+  color: $text-in-primary;
+  cursor: pointer;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  outline: none;
+  padding: 9px 20px;
+  text-align: center;
+  transition: background-color 0.25s ease-in;
+
+  &:hover {
+    background: $primary-hover;
+  }
+
+  &:disabled {
+    background: $disabled !important;
+    cursor: initial;
+  }
+}

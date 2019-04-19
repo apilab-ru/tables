@@ -1,0 +1,11 @@
+<div class="f-item__label">
+  {{ filterItem.label }}
+</div>
+
+<app-checkbox *ngFor="let item of filterItem.values"
+              [ngModel]="isChecked(item)"
+              (ngModelChange)="markAsChecked(item, $event)"
+              class="f-item__checkbox"
+              [value]="item.value">
+  {{ item.label }}
+</app-checkbox>

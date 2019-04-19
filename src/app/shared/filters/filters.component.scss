@@ -1,0 +1,24 @@
+@import "~src/styles/theme";
+
+:host {
+  padding: 5px 5px;
+  display: flex;
+  flex-flow: column;
+  box-shadow: $box-shadow;
+}
+
+.filters {
+  &__title {
+    padding: 10px;
+  }
+
+  &__item {
+    margin-bottom: 30px;
+  }
+
+  &__submit {
+    width: 100%;
+    margin-top: auto;
+    margin-bottom: 10px;
+  }
+}

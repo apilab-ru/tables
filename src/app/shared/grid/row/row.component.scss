@@ -1,0 +1,15 @@
+@import "../styles/theme";
+
+:host {
+  align-items: center;
+  background: white;
+  border: 1px solid $border-secondary;
+  border-bottom-color: $border-primary;
+  border-top-width: 0;
+  color: $text;
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+  min-height: 50px;
+  padding: 0 21px;
+}

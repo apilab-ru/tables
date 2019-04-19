@@ -1,0 +1,59 @@
+@import "~src/styles/theme";
+
+.header {
+  background: $background-secondary;
+  padding: 5px 25px 0;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+
+  &__title {
+    font-weight: bold;
+    color: $text;
+    font-size: 24px;
+  }
+
+  &__menu {
+    margin-left: auto;
+  }
+}
+
+.menu {
+  display: flex;
+
+  &__item {
+    height: 48px;
+    padding: 0 24px;
+    cursor: pointer;
+    box-sizing: border-box;
+    opacity: .6;
+    min-width: 160px;
+    text-align: center;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    vertical-align: top;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    -webkit-tap-highlight-color: transparent;
+    border-bottom: 2px solid $border;
+    color: $text;
+    text-transform: uppercase;
+    transition: 0.25s ease-in;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &-active {
+      border-bottom-color: $primary;
+      opacity: 0.8;
+    }
+  }
+}
+
+.body {
+  margin: 0 20px;
+}

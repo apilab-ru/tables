@@ -1,0 +1,59 @@
+@import '../styles/style.css';
+@import '../styles/theme';
+
+:host {
+  flex: 1;
+  margin-right: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 10px 0;
+  line-height: 1em;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  .data {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &.head {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .sort {
+      display: none;
+      font-size: 16px;
+    }
+
+    .data {
+      padding-right: 5px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    &.sort-active {
+      .sort {
+        display: block;
+      }
+    }
+
+    &:hover {
+
+      .sort {
+        display: block;
+        color: $text-hover;
+      }
+    }
+
+  }
+
+  &.control {
+    flex: none;
+    width: 50px;
+  }
+}

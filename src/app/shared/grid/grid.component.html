@@ -1,0 +1,19 @@
+<div class="grid">
+  <ng-content select="grid-header"></ng-content>
+
+  <div class="grid__data" [hidden]="isShowSpinner">
+    <div class="grid__placeholder" *ngIf="!hasData">
+      Нет данных для отображения
+    </div>
+
+    <ng-template *ngIf="hasData"
+                 ngFor
+                 [ngForOf]="data"
+                 [ngForTrackBy]="trackBy"
+                 [ngForTemplate]="rowTemplate"></ng-template>
+  </div>
+
+  <div class="grid__spinner-box" *ngIf="isShowSpinner">
+    <div class="grid__spinner"></div>
+  </div>
+</div>

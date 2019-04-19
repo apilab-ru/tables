@@ -1,0 +1,46 @@
+<app-filters class="page__filters"
+             (sendFilter)="onSendFilter($event)"
+             [filterSet]="filterSet">
+</app-filters>
+
+<div class="page__box">
+  <input type="text"
+         [(ngModel)]="searchString"
+         (ngModelChange)="tickUpdateFilter()"
+         placeholder="Поиск по всем полям"
+         class="search-input page__search"/>
+
+  <grid [list]="filteredList" [isShowSpinner]="isShowSpinner">
+
+    <grid-row *gridIterator="let item of filteredList"
+              class="users__item">
+      <grid-cell class="users__info">
+        <div>
+          name: <span [appMarkFound]="searchString">{{ item.name }}</span>
+        </div>
+        <div>
+          surname: <span [appMarkFound]="searchString">{{ item.surname }}</span>
+        </div>
+        <div class="users__text-line" [title]="item.description">
+          description: <span [appMarkFound]="searchString">{{ item.description }}</span>
+        </div>
+      </grid-cell>
+      <grid-cell class="users__card">
+        <div>
+          Phone: <span [appMarkFound]="searchString">{{ item.card.phone }}</span>
+        </div>
+        <div>
+          Email: <span [appMarkFound]="searchString">{{ item.card.email }}</span>
+        </div>
+      </grid-cell>
+      <grid-cell class="users__controls">
+        <button (click)="delete(item)" class="button">X</button>
+        <div class="users__status-list">
+          <span *ngFor="let status of item.status">
+            {{ getStatusName(status) }}
+          </span>
+        </div>
+      </grid-cell>
+    </grid-row>
+  </grid>
+</div>

@@ -1,0 +1,14 @@
+@import "../styles/theme";
+
+:host {
+  background: $background;
+  box-shadow: $header-box-shadow;
+  color: $text;
+  display: flex;
+  flex-direction: row;
+  font-size: 12px;
+  height: $header-height;
+  line-height: $header-height;
+  padding: 0 21px;
+  position: relative;
+}

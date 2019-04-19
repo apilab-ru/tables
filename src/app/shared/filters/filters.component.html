@@ -1,0 +1,12 @@
+<div class="filters__title">Фильтр:</div>
+
+<app-filters-item *ngFor="let item of filterSet"
+                  (updateFilter)="onUpdateFilterItem(item, $event)"
+                  class="filters__item"
+                  [filterItem]="item">
+</app-filters-item>
+
+<button (click)="submitFilter()"
+        class="button filters__submit">
+  Применить
+</button>

@@ -1,0 +1,35 @@
+@import "~src/styles/theme";
+
+.users {
+  &__card {
+    padding: 10px;
+    line-height: 1.3em;
+    background: $primary-opacity-light;
+  }
+
+  &__controls {
+    flex: none;
+    width: 200px;
+    text-align: end;
+  }
+
+  &__status-list {
+    margin-top: 20px;
+  }
+
+  &__info {
+    line-height: 1.3em;
+  }
+
+  &__text-line {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__item {
+    margin-bottom: 12px;
+    border-top-width: 1px;
+    box-shadow: $box-shadow;
+    min-height: 100px;
+  }
+}

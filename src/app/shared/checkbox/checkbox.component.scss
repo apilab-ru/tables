@@ -1,0 +1,41 @@
+@import "~src/styles/theme";
+
+:host {
+  display: block;
+}
+
+.checkbox {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+
+  &__input {
+    display: none;
+
+    &:checked + .checkbox__icon:before {
+      transform: scale(1);
+    }
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    border: 1px solid $border;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:before {
+      content: '✓';
+      transform: scale(0);
+      color: $primary;
+      display: block;
+      transition: 0.15s;
+    }
+  }
+
+  &__label {
+    margin-left: 10px;
+  }
+}

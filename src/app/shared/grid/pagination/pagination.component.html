@@ -1,0 +1,23 @@
+<div class="pagination__total" *ngIf="isShowTotal">
+  Всего: {{ total }}
+</div>
+<div class="pagination__pages">
+  <div class="pagination__push"></div>
+  <div class="pagination__list" *ngIf="isShowPagination">
+    <button class="pagination__page control" (click)="back()" [disabled]="first">
+      <span class="grid-icon prev"></span>
+    </button>
+    <button class="pagination__page" *ngFor="let page of pages"
+            (click)="navigateTo(page.number)"
+            [class.separator]="page.separator"
+            [class.active]="page.active">
+      {{ page.caption }}
+    </button>
+    <button class="pagination__page control" (click)="forward()" [disabled]="last">
+      <span class="grid-icon next"></span>
+    </button>
+  </div>
+  <div class="pagination__push"></div>
+</div>
+<div class="pagination__push" *ngIf="isShowTotal"></div>
+

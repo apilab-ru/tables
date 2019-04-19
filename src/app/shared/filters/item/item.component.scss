@@ -1,0 +1,22 @@
+@import "~src/styles/theme";
+
+:host {
+  display: block;
+  border: 1px solid $primary;
+  background: $background;
+  padding-bottom: 5px;
+}
+
+.f-item {
+
+  &__label {
+    margin-bottom: 10px;
+    padding: 10px;
+    background: $primary;
+    color: $text-in-primary
+  }
+
+  &__checkbox {
+    margin: 0 10px 7px;
+  }
+}
